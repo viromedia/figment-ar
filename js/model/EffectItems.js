@@ -12,7 +12,13 @@ import {getSmoke, getEmptyEffect, getGrayScale, getSepia, getSnow, getBubbles, g
 import * as EffectsConstants from '../redux/EffectsConstants';
 
 /**
- * Data model for Effects provided as input to EffectItemRender
+ * Data model for Effects provided as input to EffectItemRender. The schema is as follows:
+ * effect - the method name in js/effects/effects.js that defines the configuration of this effect
+ * loading - Initial state before the effect is added by the user by clicking the listview item. From NONE, it will go to LOADED or LOADERROR when the user tries to add this effect
+ * postProcessEffect - Video post process effect to apply to the AR frames in the scene
+ * icon_img - the icon that will be shown on the listview at the bottom for this effect
+ * selected - Is this effect currently selected by the user. Figment only allows one effect at a given time.
+ * name - string key used to identify / retreive this effect from this array
  */
 var EffectItems = [
   {

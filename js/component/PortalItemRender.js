@@ -38,14 +38,22 @@ var createReactClass = require('create-react-class');
 
 
 /**
- * Class that encapsulates configuration and behavior of Portals placed in AR Scene by the user
+ * Class that encapsulates configuration and behavior of Portals placed in AR Scene by the user.
+ * Portals <ViroPortal> represent an entry way into a <ViroPortalScene>. They contain a 3D Object
+ * for the entry "door frame" that the user can walk into, and ViroPortalScene which represent a
+ * sub-scene that the user can only access once they are inside the Portal 
  */
 var PortalItemRender = createReactClass({
     mixins: [TimerMixin],
     propTypes: {
+        // All props retreived from the data model for Portals (See js/model/PortalItems.js)
         portalIDProps: PropTypes.any,
+        // Callback function that gets triggered once the portal is loaded
         onLoadCallback: PropTypes.func,
+        // Callback function thats fired when a user clicks the portal
         onClickStateCallback: PropTypes.func,
+        // A callback method thats provided here, gets triggered when the portal loads that resolves to the correct
+        // position and orientation for the portal to be placed at 
         hitTestMethod: PropTypes.func,
     },
 
@@ -65,6 +73,10 @@ var PortalItemRender = createReactClass({
         this._portalData = PortalData.getPortalArray();
     },
 
+    /**
+     * This render() function adds a ViroNode to the scene containing a ViroPortalScene,
+     * with ViroPortal and the required 3D Object for the "entry way", and views to render "inside the portal"
+     */
     render: function() {
       var portalItem = PortalData.getPortalArray()[this.props.portalIDProps.index];
       let transformBehaviors = {}
@@ -82,6 +94,7 @@ var PortalItemRender = createReactClass({
           rotation={this.state.rotation}
           onDrag={()=>{}} >
 
+          {/* Spotlight to light the Portal entry way (Viro3DObject)*/}
           <ViroSpotLight
             innerAngle={5}
             outerAngle={20}
@@ -94,6 +107,8 @@ var PortalItemRender = createReactClass({
             shadowFarZ={5}
             shadowOpacity={.9} />
 
+            {/* Configures the portal in the AR Scene, with 3D Object for the entry way and 
+                views rendered inside the portal */}
             <ViroPortalScene
               position={portalItem.position}
               onRotate={this._onRotate}
@@ -105,6 +120,7 @@ var PortalItemRender = createReactClass({
               onPortalExit={this._onPortalExit} >
 
               <ViroPortal>
+                {/* 3D Object for the entry way */}
                 <Viro3DObject
                   source={portalItem.obj}
                   materials={portalItem.materials}
@@ -114,8 +130,10 @@ var PortalItemRender = createReactClass({
                   onLoadEnd={this._onObjectLoadEnd(this.props.portalIDProps.uuid)}
                   lightReceivingBitMask={this.props.bitMask | 1}
                   shadowCastingBitMask={this.props.bitMask} />
+                }
               </ViroPortal>
 
+              {/* Sub-scene that renders content "inside" the portal*/}
               {this._renderPortalInside(portalItem)}
 
             </ViroPortalScene>
@@ -127,6 +145,13 @@ var PortalItemRender = createReactClass({
       this.arNodeRef = component;
     },
 
+    /**
+     * This method handles various state changes that happen when a user "Clicks" a portal in the scene. For every "click" on a portal, 
+       a user can have different intentions:
+       1. a quick tap to bring up the contextmenu
+       3. a long tap where the intention is actually "drag" the model to reposition it
+       Each "click" is comprised of two events - ClickDown : trigged when the user's finger touches the screen and a ClickUp: when the finger leaves the screen
+     */
     _onClickState(uuid) {
         return (clickState, position, source)=> {
           if (clickState == 1) { // clickState == 1 -> "ClickDown"
@@ -143,11 +168,17 @@ var PortalItemRender = createReactClass({
             );
           }
 
-          if (clickState == 2) {
+          if (clickState == 2) { // clickState == 2 -> "ClickUp"
             this.props.onClickStateCallback(uuid, clickState, UIConstants.LIST_MODE_PORTAL);
           }
         }
     },
+
+    /**
+     * This method takes a portalItem as argument - which is all the props retreived from the data model
+     * for portals. Based on type of the content (360 image / video, 2D image / video) it adds relevant 
+     * ViroComponents to render the inside of the portals.
+     */
     _renderPortalInside(portalItem) {
         var portalSource = (this.props.portalIDProps.portal360Image != undefined && this.props.portalIDProps.portal360Image != null) ? this.props.portalIDProps.portal360Image: portalItem.portal360Image;
         if(this._is360Photo(portalSource, portalSource.width, portalSource.height)) {
@@ -161,6 +192,8 @@ var PortalItemRender = createReactClass({
             );
           }
         } else {
+          // If the content selected is a 2D video, we create a sub-scene with a "theater" background sphere with a Video rendering inside the portal
+          // If it's a 2D image, we add a 3D "pedestal" like object to create an art gallery inside the portal.
           var viewArray = [];
           if(this._isVideo(portalSource.source.uri)) {
             viewArray.push(<ViroSphere  position={[0,0,0]} radius={56} facesOutward={false} key="background_portal" materials="theatre" />);
@@ -262,6 +295,11 @@ var PortalItemRender = createReactClass({
         };
     },
 
+    /**
+     * This method is executed once a portal finishes loading, the position and forward argument are used to
+     * find the correct position of the portal. position, forward and results are calculated when user adds a portal to 
+     * the scene by performing an AR Hit Test (see https://docs.viromedia.com/docs/viroarscene)
+     */
     _onARHitTestResults(position, forward, results) {
       // default position is just 3 forward of the user
       let scaledForwardVector = [forward[0] * 1.2, forward[1]* 1.2, forward[2]* 1.2];
@@ -291,6 +329,9 @@ var PortalItemRender = createReactClass({
       this.setTimeout(() =>{this._updateInitialRotation()}, 500);
     },
 
+    // This function gets the rotation transform of the parent ViroNode that was placed in the scene by the user
+    // and applies that rotation to the portal inside the ViroNode (by setting state). This is done to ensure that
+    // the portal faces the user at it's initial placement.
     _updateInitialRotation() {
       this.arNodeRef.getTransformAsync().then((retDict)=>{
          let rotation = retDict.rotation;

@@ -12,7 +12,20 @@ import * as LoadingConstants from '../redux/LoadingStateConstants';
 var POSITION_OFFSET = .05 // 5 cm
 
 /**
- * Data model for Portals provided as input to PortalItemRenderer
+ * Data model for Portals provided as input to PortalItemRenderer. The schema is as follows:
+ * name - string key used to identify / retreive this portal from this data model array
+ * selected - Is this portal currently selected by the user. Used in identifying which portal to execute action from Context Menu (example - remove action)
+ * loading - initial loading state. Can toggle to LOADING, LOADED, ERROR when user tries to add the portal to the system
+ * icon_img - the icon that will be shown on the listview at the bottom for this portal
+ * obj - path for VRX format obj for this portal's 3D door frame. Checked in locally
+ * materials - materials used in the VRX model (Currently unused since moving to VRX format)
+ * animation - VRX skeletal animations that are baked in to the model definition itself (Currently unused for portals, used in ModelItems)
+ * portal360Image - the 360 image used as background inside the portal
+ * scale - initial scale of the node containing the portal
+ * portalScale - scale of the portal 3D door frame
+ * position - initial position of the model.
+ * frameType - VRX / OBJ format for the frame object in the portal
+ * resources - all the materials (textures) used in this object, that are checked in locally.
  */
 var PortalItems = [
   {
