@@ -1,0 +1,12 @@
+platform :ios, '9.3'
+target 'figment' do
+  use_frameworks!
+  pod 'ViroReact', :path => '../node_modules/react-viro/ios/'
+  pod 'ViroKit', :path => '../node_modules/react-viro/ios/dist/ViroRenderer/'
+end
+
+# Needed to fix linker error between GVRSDK and React
+# https://github.com/facebook/react-native/issues/18022
+post_install do |installer|
+    system(". ./pod_post_install.sh")
+end

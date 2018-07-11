@@ -1,0 +1,13 @@
+rootProject.name = 'figment'
+include ':react-native-share'
+project(':react-native-share').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-share/android')
+include ':lottie-react-native'
+project(':lottie-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/lottie-react-native/src/android')
+include ':react-native-video'
+project(':react-native-video').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-video/android')
+
+include ':app'
+include ':react_viro', ':arcore_client', ':viro_renderer'
+project(':arcore_client').projectDir = new File('../node_modules/react-viro/android/arcore_client')
+project(':viro_renderer').projectDir = new File('../node_modules/react-viro/android/viro_renderer')
+project(':react_viro').projectDir = new File('../node_modules/react-viro/android/react_viro')

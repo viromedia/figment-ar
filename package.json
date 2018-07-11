@@ -1,0 +1,30 @@
+{
+  "name": "Figment",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "prestart": "./node_modules/react-viro/bin/run_ngrok.sh",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "lottie-react-native": "^2.3.2",
+    "react": "16.3.1",
+    "react-native": "^0.55.1",
+    "react-native-share": "^1.0.25",
+    "react-native-video": "^2.0.0",
+    "react-redux": "^5.0.5",
+    "react-timer-mixin": "^0.13.3",
+    "react-viro": "2.8.1",
+    "redux": "^3.7.2"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "devDependencies": {
+    "babel-jest": "21.2.0",
+    "babel-preset-react-native": "4.0.0",
+    "jest": "21.2.1",
+    "react-test-renderer": "16.0.0-beta.5"
+  }
+}

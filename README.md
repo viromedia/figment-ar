@@ -36,7 +36,7 @@ Nothing needed here
 
 ### Running and Debugging the app
 #### Add your API key
-Open file `js/app.js`. Update `ViroARSceneNavigator` definition's `apiKey` at lines 127-131 with your own API Key
+Open file `js/app.js`. Update `ViroARSceneNavigator` definition's `apiKey` at lines 127 with your own API Key
 #### Android
 To build, install and launch the android app
 ```
@@ -97,4 +97,3 @@ figment-ar/js/
 │       └── ui.js    // Redux store / reducers for 2D UI components
 └── res
 ```
-
