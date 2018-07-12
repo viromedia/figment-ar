@@ -38,10 +38,17 @@ Nothing needed here
 #### Add your API key
 Open file `js/app.js`. Update `ViroARSceneNavigator` definition's `apiKey` at lines 127 with your own API Key
 #### Android
-To build, install and launch the android app
-```
-react-native run-android --variant=gvrDebug
-```
+1. For Android, make sure you have downloaded and installed Android Studio from [here](https://developer.android.com/studio/install) to get required SDK and platform-tools for building android apps
+    Make sure you have the required environment variables set - `$ANDROID_HOME`, and added `platform-tools` to `$PATH` variable. If not,
+    ```
+    export ANDROID_HOME=/YOUR_PATH_TO/Android/sdk
+    export PATH=$ANDROID_HOME/platform-tools:$PATH
+    export PATH=$ANDROID_HOME/tools:$PATH
+    ```
+2. To build, install and launch the android app, from the root of the project (`viro/` directory)
+    ```
+    react-native run-android --variant=gvrDebug
+    ```
 #### iOS
 For building iOS App via Xcode
 1. Open Xcode workspace
