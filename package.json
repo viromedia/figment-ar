@@ -8,23 +8,23 @@
     "test": "jest"
   },
   "dependencies": {
-    "lottie-react-native": "^2.3.2",
-    "react": "16.3.1",
-    "react-native": "^0.55.1",
-    "react-native-share": "^1.0.25",
-    "react-native-video": "^2.0.0",
+    "lottie-react-native": "3.0.3",
+    "react": "16.8.3",
+    "react-native": "0.59.3",
+    "react-native-share": "2.0.0",
+    "react-native-video": "4.0.1",
     "react-redux": "^5.0.5",
     "react-timer-mixin": "^0.13.3",
-    "react-viro": "2.8.1",
+    "react-viro": "2.15.0",
     "redux": "^3.7.2"
   },
   "jest": {
     "preset": "react-native"
   },
   "devDependencies": {
-    "babel-jest": "21.2.0",
-    "babel-preset-react-native": "4.0.0",
-    "jest": "21.2.1",
-    "react-test-renderer": "16.0.0-beta.5"
+    "babel-jest": "23.6.0",
+    "metro-react-native-babel-preset": "0.51.0",
+    "jest": "23.6.0",
+    "react-test-renderer": "16.6.1"
   }
 }

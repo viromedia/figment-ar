@@ -94,14 +94,14 @@ def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = false
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.3"
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
 
     defaultConfig {
         flavorDimensions "platform"
         applicationId "com.viro.figment"
         minSdkVersion 24
-        targetSdkVersion 26
+        targetSdkVersion 28
         multiDexEnabled true
         versionCode 5
         versionName "1.0"
@@ -172,18 +172,18 @@ dependencies {
     implementation project(':react-native-share')
     implementation project(':lottie-react-native')
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.facebook.react:react-native:+'
     implementation project(':arcore_client')
     implementation project(path: ':viro_renderer')
     implementation project(path: ':react_viro')
     implementation 'com.google.android.exoplayer:exoplayer:2.7.1'
     implementation 'com.google.protobuf.nano:protobuf-javanano:3.0.0-alpha-7'
-    implementation 'com.amazonaws:aws-android-sdk-core:2.2.+'
-    implementation 'com.amazonaws:aws-android-sdk-ddb:2.2.+'
-    implementation 'com.amazonaws:aws-android-sdk-ddb-mapper:2.2.+'
-    implementation 'com.amazonaws:aws-android-sdk-cognito:2.2.+'
-    implementation 'com.amazonaws:aws-android-sdk-cognitoidentityprovider:2.2.+'
+    implementation 'com.amazonaws:aws-android-sdk-core:2.7.7'
+    implementation 'com.amazonaws:aws-android-sdk-ddb:2.7.7'
+    implementation 'com.amazonaws:aws-android-sdk-ddb-mapper:2.7.7'
+    implementation 'com.amazonaws:aws-android-sdk-cognito:2.7.7'
+    implementation 'com.amazonaws:aws-android-sdk-cognitoidentityprovider:2.7.7'
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'com.android.support:multidex:1.0.1'
 }

@@ -16,13 +16,12 @@
 		130B331F1F758BFA006CE172 /* libRCTCameraRoll.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 130B331E1F758BC8006CE172 /* libRCTCameraRoll.a */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
-		13992E2320F55AF8008FA011 /* libLottie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 130B33921F7ED7A5006CE172 /* libLottie.a */; };
-		13992E2420F55AF8008FA011 /* libLottieReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13992DF320F55AB0008FA011 /* libLottieReactNative.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		13C105D422EBB2FC00DF9DD6 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13C105D322EBB2FC00DF9DD6 /* JavaScriptCore.framework */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
@@ -185,25 +184,11 @@
 			remoteGlobalIDString = EBF21BFA1FC4989A0052F4D5;
 			remoteInfo = "jsinspector-tvOS";
 		};
-		13992E1E20F55AB0008FA011 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9936F3131F5F2E4B0010BF04;
-			remoteInfo = privatedata;
-		};
-		13992E2020F55AB0008FA011 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9936F32F1F5F2E5B0010BF04;
-			remoteInfo = "privatedata-tvOS";
-		};
 		13992E5520F5640D008FA011 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C98996E9688D4181BFACD57B /* Lottie.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 84FE12EE1E4C1485009B157C;
+			remoteGlobalIDString = 486E85F2220A36F6007CD915;
 			remoteInfo = LottieLibraryIOS;
 		};
 		139FDEF31B06529B00C62182 /* PBXContainerItemProxy */ = {
@@ -212,6 +197,41 @@
 			proxyType = 2;
 			remoteGlobalIDString = 3C86DF461ADF2C930047B81A;
 			remoteInfo = RCTWebSocket;
+		};
+		13C105A122EBB2EA00DF9DD6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C98996E9688D4181BFACD57B /* Lottie.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 486E8675220A3751007CD915;
+			remoteInfo = LottieLibraryMacOS;
+		};
+		13C105CA22EBB2EA00DF9DD6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EDEBC6D6214B3E7000DD5AC8;
+			remoteInfo = jsi;
+		};
+		13C105CC22EBB2EA00DF9DD6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EDEBC73B214B45A300DD5AC8;
+			remoteInfo = jsiexecutor;
+		};
+		13C105CE22EBB2EA00DF9DD6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ED296FB6214C9A0900B7C4FE;
+			remoteInfo = "jsi-tvOS";
+		};
+		13C105D022EBB2EA00DF9DD6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ED296FEE214C9CF800B7C4FE;
+			remoteInfo = "jsiexecutor-tvOS";
 		};
 		13D882292031106100F80219 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -332,20 +352,6 @@
 			remoteGlobalIDString = 3D3CD9321DE5FBEE00167DC4;
 			remoteInfo = "cxxreact-tvOS";
 		};
-		3DAD3EAC1DF850E9000B6D8A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3D3CD90B1DE5FBD600167DC4;
-			remoteInfo = jschelpers;
-		};
-		3DAD3EAE1DF850E9000B6D8A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3D3CD9181DE5FBD800167DC4;
-			remoteInfo = "jschelpers-tvOS";
-		};
 		5E9157321DD0AC6500FF2AA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */;
@@ -398,6 +404,7 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = figment/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = figment/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = figment/main.m; sourceTree = "<group>"; };
+		13C105D322EBB2FC00DF9DD6 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		18A14EB52D424C639008A709 /* libRCTVideo.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTVideo.a; sourceTree = "<group>"; };
 		218E9E55C4BD4A099BA73A3D /* libLottie.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libLottie.a; sourceTree = "<group>"; };
@@ -430,6 +437,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13C105D422EBB2FC00DF9DD6 /* JavaScriptCore.framework in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				130B331F1F758BFA006CE172 /* libRCTCameraRoll.a in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
@@ -442,8 +450,6 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				13992E2320F55AF8008FA011 /* libLottie.a in Frameworks */,
-				13992E2420F55AF8008FA011 /* libLottieReactNative.a in Frameworks */,
 				E9E4EA1373ED4566BA7A2900 /* libRNShare.a in Frameworks */,
 				B6EA73C24DB74757B2F7E6F0 /* libRCTVideo.a in Frameworks */,
 				7AECDBF04223D12C8CC6BABD /* Pods_figment.framework in Frameworks */,
@@ -560,9 +566,10 @@
 			isa = PBXGroup;
 			children = (
 				130B338E1F7ED7A5006CE172 /* Lottie.framework */,
-				130B33901F7ED7A5006CE172 /* Lottie.framework */,
 				13D8822A2031106100F80219 /* Lottie.framework */,
+				130B33901F7ED7A5006CE172 /* Lottie.framework */,
 				130B33921F7ED7A5006CE172 /* libLottie.a */,
+				13C105A222EBB2EA00DF9DD6 /* libLottie.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -634,16 +641,16 @@
 				3DAD3EA71DF850E9000B6D8A /* libyoga.a */,
 				3DAD3EA91DF850E9000B6D8A /* libcxxreact.a */,
 				3DAD3EAB1DF850E9000B6D8A /* libcxxreact.a */,
-				3DAD3EAD1DF850E9000B6D8A /* libjschelpers.a */,
-				3DAD3EAF1DF850E9000B6D8A /* libjschelpers.a */,
 				13992E1B20F55AB0008FA011 /* libjsinspector.a */,
 				13992E1D20F55AB0008FA011 /* libjsinspector-tvOS.a */,
 				130B322A1F7467DD006CE172 /* libthird-party.a */,
 				130B322C1F7467DD006CE172 /* libthird-party.a */,
 				130B322E1F7467DD006CE172 /* libdouble-conversion.a */,
 				130B32301F7467DD006CE172 /* libdouble-conversion.a */,
-				13992E1F20F55AB0008FA011 /* libprivatedata.a */,
-				13992E2120F55AB0008FA011 /* libprivatedata-tvOS.a */,
+				13C105CB22EBB2EA00DF9DD6 /* libjsi.a */,
+				13C105CD22EBB2EA00DF9DD6 /* libjsiexecutor.a */,
+				13C105CF22EBB2EA00DF9DD6 /* libjsi-tvOS.a */,
+				13C105D122EBB2EA00DF9DD6 /* libjsiexecutor-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -651,6 +658,7 @@
 		1B7CA765493CB9CB68D79C7E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				13C105D322EBB2FC00DF9DD6 /* JavaScriptCore.framework */,
 				C4A494F5488413CB19DC39D2 /* Pods_figment.framework */,
 			);
 			name = Frameworks;
@@ -855,6 +863,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1071,25 +1080,46 @@
 			remoteRef = 13992E1C20F55AB0008FA011 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		13992E1F20F55AB0008FA011 /* libprivatedata.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libprivatedata.a;
-			remoteRef = 13992E1E20F55AB0008FA011 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		13992E2120F55AB0008FA011 /* libprivatedata-tvOS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libprivatedata-tvOS.a";
-			remoteRef = 13992E2020F55AB0008FA011 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		139FDEF41B06529B00C62182 /* libRCTWebSocket.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libRCTWebSocket.a;
 			remoteRef = 139FDEF31B06529B00C62182 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		13C105A222EBB2EA00DF9DD6 /* libLottie.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libLottie.a;
+			remoteRef = 13C105A122EBB2EA00DF9DD6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		13C105CB22EBB2EA00DF9DD6 /* libjsi.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libjsi.a;
+			remoteRef = 13C105CA22EBB2EA00DF9DD6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		13C105CD22EBB2EA00DF9DD6 /* libjsiexecutor.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libjsiexecutor.a;
+			remoteRef = 13C105CC22EBB2EA00DF9DD6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		13C105CF22EBB2EA00DF9DD6 /* libjsi-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libjsi-tvOS.a";
+			remoteRef = 13C105CE22EBB2EA00DF9DD6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		13C105D122EBB2EA00DF9DD6 /* libjsiexecutor-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libjsiexecutor-tvOS.a";
+			remoteRef = 13C105D022EBB2EA00DF9DD6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		13D8822A2031106100F80219 /* Lottie.framework */ = {
@@ -1202,20 +1232,6 @@
 			fileType = archive.ar;
 			path = libcxxreact.a;
 			remoteRef = 3DAD3EAA1DF850E9000B6D8A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3DAD3EAD1DF850E9000B6D8A /* libjschelpers.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libjschelpers.a;
-			remoteRef = 3DAD3EAC1DF850E9000B6D8A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3DAD3EAF1DF850E9000B6D8A /* libjschelpers.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libjschelpers.a;
-			remoteRef = 3DAD3EAE1DF850E9000B6D8A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */ = {
@@ -1555,6 +1571,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9D6AE0C61A4A7277DDD655BB /* Pods-figment.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
@@ -1573,6 +1590,13 @@
 				INFOPLIST_FILE = figment/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/GVRAudioSDK/Libraries\"",
+					"\"${PODS_ROOT}/GVRSDK/Libraries\"",
+					"\"${PODS_ROOT}/../../node_modules/react-viro/ios/dist/lib\"",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -1589,6 +1613,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8021759BB3512BF61CA4F4CA /* Pods-figment.release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UN8MD7234Y;
@@ -1606,6 +1631,13 @@
 				INFOPLIST_FILE = figment/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/GVRAudioSDK/Libraries\"",
+					"\"${PODS_ROOT}/GVRSDK/Libraries\"",
+					"\"${PODS_ROOT}/../../node_modules/react-viro/ios/dist/lib\"",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

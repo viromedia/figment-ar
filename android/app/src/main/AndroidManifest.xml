@@ -17,15 +17,12 @@
     <uses-feature android:name="android.hardware.camera.ar" android:required="true"/>
     <uses-feature android:name="android.hardware.screen.portrait" />
 
-    <uses-sdk
-        android:minSdkVersion="24"
-        android:targetSdkVersion="26" />
-
     <application
       android:name=".MainApplication"
       android:allowBackup="true"
       android:label="@string/app_name_figment"
       android:icon="@drawable/figment_app_icon"
+      android:usesCleartextTraffic="true"
       android:theme="@style/AppTheme"
       tools:replace="android:label">
       <meta-data android:name="com.google.ar.core" android:value="required" />
@@ -44,7 +41,7 @@
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
 
         <provider
-            android:name="android.support.v4.content.FileProvider"
+            android:name="androidx.core.content.FileProvider"
             android:authorities="com.viro.figment.provider"
             android:grantUriPermissions="true"
             android:exported="false">
