@@ -104,11 +104,11 @@ figment-ar/js/
 │       └── ui.js    // Redux store / reducers for 2D UI components
 └── res
 ```
-### Troubleshooting
+## Troubleshooting
 For iOS you might run into a few issues such as follows:
-#### Xcode: Undefined symbols for architecture x86_64: "JSObjectGetPrototype"
+### Xcode: Undefined symbols for architecture x86_64: "JSObjectGetPrototype"
 Refer to https://github.com/facebook/react-native/issues/23183 for how to fix it
 
-#### "TextCompositionLayer.swift" used twice IOS
+### "TextCompositionLayer.swift" used twice IOS
 Refer to https://github.com/react-native-community/lottie-react-native/issues/523 for how to fix
 If doing the steps mentioned on `lottie-react-native` does not fix it, open Lottie.xcodeproj in your Xcode's project explorer under Libraries and search for `TextCompositionLayer.swift`. You might notice this file being included twice. Simply delete one of them from Xcode (reference only). It's basically including two copies of the same file. And that should resolve the problem for you.
