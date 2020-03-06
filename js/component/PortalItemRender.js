@@ -130,7 +130,6 @@ var PortalItemRender = createReactClass({
                   onLoadEnd={this._onObjectLoadEnd(this.props.portalIDProps.uuid)}
                   lightReceivingBitMask={this.props.bitMask | 1}
                   shadowCastingBitMask={this.props.bitMask} />
-                }
               </ViroPortal>
 
               {/* Sub-scene that renders content "inside" the portal*/}
